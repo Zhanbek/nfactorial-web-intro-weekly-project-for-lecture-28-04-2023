@@ -1,0 +1,40 @@
+.Title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 630px;
+    height: 84px;    
+    margin: 100px auto 90px 80px;
+    padding: 0;
+}
+
+.Title-of-app {
+    width: 630px;
+    height: 38px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 38px;        
+    color: #151517;
+    margin: 0;
+    padding: 0;    
+}
+
+.Cheerupings {
+    width: 630px;
+    height: 22px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 138% */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #151517;
+   
+}
