@@ -1,3 +1,65 @@
-.Main-container {
-    
+
+
+.Buttons-list {
+    display: grid;
+    grid-template-columns: 84px 87px 84px 86px;   
+    column-gap: 16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 389px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.Set-all-mode {
+    width: 84px;
+    height: 40px;    
+    background: rgba(8, 30, 52, 0.42);
+    border-radius: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;    
+    color: #FFFFFF;  
+    text-align: center;  
+    margin: 0;
+    padding: 10px 24px;
+}
+
+.Set-todo-mode {
+    width: 87px;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(8, 30, 52, 0.05), rgba(8, 30, 52, 0.05)), #F0F0F0;
+    border-radius: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #081E34;    
+    text-align: center;    
+    margin: 0;   
+    padding: 10px 24px;
+}
+
+.Set-done-mode {
+    width: 84px;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(8, 30, 52, 0.05), rgba(8, 30, 52, 0.05)), #F0F0F0;
+    border-radius: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #081E34;    
+    text-align: center;
+    margin: 0;   
+    padding: 10px 24px;
+}
+
+.Set-trash-mode {
+
 }

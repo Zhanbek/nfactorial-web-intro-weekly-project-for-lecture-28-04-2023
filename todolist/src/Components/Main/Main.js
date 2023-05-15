@@ -1,26 +1,71 @@
+import './Main.css'
+import './Main-outline-temp.css'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const INIT_ACTIONS_LIST = [
-    {id : uuidv4(), name : "Go to the grocery store",       status : "Done"},
-    {id : uuidv4(), name : "Сook food",                     status : "ToDo"},
-    {id : uuidv4(), name : "Path the exam",                 status : "ToDo"},
-    {id : uuidv4(), name : "Wash the dishes",               status : "ToDo"},
-    {id : uuidv4(), name : "Go to karaoke",                 status : "TrashToDelete"},
-    {id : uuidv4(), name : "Read a lecture",                status : "ToDo"},
-    {id : uuidv4(), name : "Сheck homework assignments",    status : "Doту"},
-]
 
-export default Main() {
-    const [displayMode, setDisplayMode] = useState("DisplayWithToDoStatus");
+export default function Main() {
+    const INIT_ACTIONS_LIST = [
+        {id : uuidv4(), name : "Go to the grocery store",       status : "Done"},
+        {id : uuidv4(), name : "Сook food",                     status : "ToDo"},
+        {id : uuidv4(), name : "Path the exam",                 status : "ToDo"},
+        {id : uuidv4(), name : "Wash the dishes",               status : "ToDo"},
+        {id : uuidv4(), name : "Go to karaoke",                 status : "Trash"},
+        {id : uuidv4(), name : "Read a lecture",                status : "ToDo"},
+        {id : uuidv4(), name : "Сheck homework assignments",    status : "Done"}
+    ];
+    
+    const [displayMode, setDisplayMode] = useState('DisplayAll');
     const [actionsList, setActionsList] = useState(INIT_ACTIONS_LIST);
-    return (
-        <div className="Main-container">
-            <h2 className="Current-status"></h2>
-        </div>
-    )
 
-    const statusValue = (displayMode === "DisplayWithToDoStatus") ? ();
+    let statusValue = '';
+    
+    switch (displayMode) {
+        case 'DisplayActionsWithToDoStatus': 
+            statusValue = 'ToDo';
+            break;
+        case 'DisplayActionsWithDoneStatus': 
+            statusValue = 'Done';
+            break;
+        case 'DisplayActionsWithTrashStatus': 
+            statusValue = 'Done';
+            break;
+        case 'DisplayAll': 
+            statusValue = null;
+            break;
+        default:
+            statusValue = null;
+            break;
+    }
+    
+    const actionsToDisplay = actionsList.filter((item) => item.status === ( (statusValue === null) ? item.status : statusValue ) );
 
-    const actionsToDisplay = actionsList.filter((item)=> item.status = displayMode)
+    return (        
+        <ul className = "Buttons-list">
+            <li className = "Buttons-list-item">
+                <button className = "Set-all-mode">
+                    All
+                </button>
+            </li>
+            <li className = "buttons-list-item">
+                <button className = "Set-todo-mode">
+                    To Do
+                </button>
+            </li>
+            <li className = "buttons-list-item">
+                <button className = "Set-done-mode">
+                    Done
+                </button>
+            </li>
+            <li className = "buttons-list-item">
+                <button className = "Set-trash-mode">
+                    Trash
+                </button>
+            </li>
+
+            {
+               actionsToDisplay.map((item, index) => <div>{item.name}</div>)                     
+            }
+        </ul>        
+    );
 }
