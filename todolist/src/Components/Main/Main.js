@@ -12,12 +12,15 @@ const INIT_ACTIONS_LIST = [
 ]
 
 export default Main() {
-    const [displayMode, setDisplayMode] = useState("displayWithToDoStatus");
-    const [actionsList, setActionsList] = useState(
-    );
+    const [displayMode, setDisplayMode] = useState("DisplayWithToDoStatus");
+    const [actionsList, setActionsList] = useState(INIT_ACTIONS_LIST);
     return (
         <div className="Main-container">
             <h2 className="Current-status"></h2>
         </div>
     )
+
+    const statusValue = (displayMode === "DisplayWithToDoStatus") ? ();
+
+    const actionsToDisplay = actionsList.filter((item)=> item.status = displayMode)
 }
