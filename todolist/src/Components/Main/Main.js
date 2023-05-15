@@ -43,22 +43,22 @@ export default function Main() {
     return (        
         <ul className = "Buttons-list">
             <li className = "Buttons-list-item">
-                <button className = "Set-all-mode">
+                <button className = "Set-display-mode Mode-selected">
                     All
                 </button>
             </li>
             <li className = "buttons-list-item">
-                <button className = "Set-todo-mode">
+                <button className = "Set-display-mode">
                     To Do
                 </button>
             </li>
             <li className = "buttons-list-item">
-                <button className = "Set-done-mode">
+                <button className = "Set-display-mode">
                     Done
                 </button>
             </li>
             <li className = "buttons-list-item">
-                <button className = "Set-trash-mode">
+                <button className = "Set-display-mode">
                     Trash
                 </button>
             </li>
