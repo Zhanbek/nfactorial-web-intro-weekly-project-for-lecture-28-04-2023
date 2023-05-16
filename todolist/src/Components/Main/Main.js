@@ -38,8 +38,7 @@ export default function Main() {
             break;
     }
     
-    const actionsToDisplay = [];
-    actionsToDisplay = (statusValue === null) ? [...actionsList] : actionsList.filter( (item) => item.status === statusValue ) ; 
+    const actionsToDisplay = (statusValue === null) ? [...actionsList] : actionsList.filter( (item) => item.status === statusValue ) ; 
 
     return (        
         <ul className = "Buttons-list">
