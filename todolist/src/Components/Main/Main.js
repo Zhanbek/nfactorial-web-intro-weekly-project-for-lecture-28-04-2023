@@ -38,7 +38,8 @@ export default function Main() {
             break;
     }
     
-    const actionsToDisplay = actionsList.filter((item) => item.status === ( (statusValue === null) ? item.status : statusValue ) );
+    const actionsToDisplay = [];
+    actionsToDisplay = (statusValue === null) ? [...actionsList] : actionsList.filter( (item) => item.status === statusValue ) ; 
 
     return (        
         <ul className = "Buttons-list">
@@ -63,9 +64,7 @@ export default function Main() {
                 </button>
             </li>
 
-            {
-               actionsToDisplay.map((item, index) => <div>{item.name}</div>)                     
-            }
+
         </ul>        
     );
 }
