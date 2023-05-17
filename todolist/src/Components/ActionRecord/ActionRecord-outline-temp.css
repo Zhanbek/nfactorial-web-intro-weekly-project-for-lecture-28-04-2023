@@ -1,0 +1,10 @@
+.Actions-list-item {
+    outline: 3px solid black; 
+}
+
+.Call-modal-window {
+    outline: 3px solid green }
+
+.Action-title {
+    outline: 3px solid blue; 
+}

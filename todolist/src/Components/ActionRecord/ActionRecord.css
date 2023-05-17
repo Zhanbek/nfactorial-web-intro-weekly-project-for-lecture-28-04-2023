@@ -1,8 +1,57 @@
 .Actions-list-item {
-    display: box;
+    display: flex;
+    align-items: baseline;
     margin: 0;
     padding: 0;    
     width: 654px;
     height: 24px;
     list-style-type: none;    
+}
+
+.Call-modal-window {
+    display: box;
+    width: 24px;
+    height: 24px;   
+    box-sizing: border-box;
+    maring: 0;
+    padding: 0;
+}
+
+.Call-modal-window-img {
+    width: 2.5px;
+    height: 10px;
+    color: #AEAEAE;
+} 
+
+.Action-checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    maring: 0 8px 0 0;
+    padding: 0;
+
+}
+
+.Action-checkbox {
+    width: 16px;
+    height: 16px;
+    left: 4px;
+    top: 4px;    
+    border: 1.4px solid #AEAEAE;
+    border-radius: 4px;
+}
+
+.Action-title {
+    width: 598px;
+    height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    align-items: center;    
+    color: #151517;    
 }
