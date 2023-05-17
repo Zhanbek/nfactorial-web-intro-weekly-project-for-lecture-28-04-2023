@@ -1,3 +1,4 @@
+import ActionRecord from "../ActionRecord/ActionRecord"
 import './Main.css'
 import './Main-outline-temp.css'
 import { useState } from "react";
@@ -63,7 +64,7 @@ export default function Main() {
                 {
                     filterActions(statusValue).map(
                         (item) => {
-                            return <p>{item.name}</p>
+                            return <ActionRecord actionItem = {item}/>
                         }
                     )
                 }

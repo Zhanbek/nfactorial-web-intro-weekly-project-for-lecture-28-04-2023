@@ -1,8 +1,11 @@
 import './ActionRecord.css'
-import { useState } from "react";
 
-import { v4 as uuidv4 } from "uuid";
-
-default export ActionRecord() {
-    return <div class = "ActionRecord"></div>
+export default function ActionRecord({actionItem}) {
+    return (
+        <li class = "Actions-list-item">
+            <button class = "callModalWindow"></button>
+            <input type = "checkbox"></input>
+            <span>{actionItem.name}</span>
+        </li>
+    );
 }

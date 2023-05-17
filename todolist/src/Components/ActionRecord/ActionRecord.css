@@ -1,0 +1,8 @@
+.Actions-list-item {
+    display: box;
+    margin: 0;
+    padding: 0;    
+    width: 654px;
+    height: 24px;
+    list-style-type: none;    
+}
