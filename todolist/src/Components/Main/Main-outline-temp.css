@@ -3,3 +3,7 @@
 .Buttons-list {
     outline: 3px solid black;        
 }
+
+.Actions-list {
+    outline: 1px solid green;        
+}

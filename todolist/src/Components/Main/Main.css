@@ -49,3 +49,9 @@
     padding: 10px 24px;
 }
 
+.Actions-list {
+    margin: 0;
+    padding: 0;
+    width: 654px;
+    min-height: 184px;
+}
