@@ -1,11 +1,14 @@
-
+.Main {
+    margin: 0;
+    padding: 0;
+}
 
 .Buttons-list {
     display: grid;
     grid-template-columns: repeat(4, 87px);   
     column-gap: 16px;
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 64px 0;
     padding: 0;
     width: 396px;
     height: 40px;
@@ -16,6 +19,19 @@
     background: rgba(8, 30, 52, 0.42);
     color: #FFFFFF;  
 }
+
+.Display-status {
+    width: 1280px;
+    height: 28px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #151517;
+    margin: 0 0 24px 0;
+    padding: 0;
+} 
 
 .Set-display-mode {
     width: 87px;

@@ -15,55 +15,58 @@ export default function Main() {
         {id : uuidv4(), name : "Сheck homework assignments",    status : "Done"}
     ];
     
-    const [displayMode, setDisplayMode] = useState('DisplayAll');
     const [actionsList, setActionsList] = useState(INIT_ACTIONS_LIST);
-
-    let statusValue = '';
+    const [statusValue, setStatusValue] = useState('All');
     
-    switch (displayMode) {
-        case 'DisplayActionsWithToDoStatus': 
-            statusValue = 'ToDo';
-            break;
-        case 'DisplayActionsWithDoneStatus': 
-            statusValue = 'Done';
-            break;
-        case 'DisplayActionsWithTrashStatus': 
-            statusValue = 'Done';
-            break;
-        case 'DisplayAll': 
-            statusValue = null;
-            break;
-        default:
-            statusValue = null;
-            break;
+    const handleTypeStatus = (type) => {
+        setStatusValue(type)
     }
-    
-    const actionsToDisplay = (statusValue === null) ? [...actionsList] : actionsList.filter( (item) => item.status === statusValue ) ; 
 
-    return (        
-        <ul className = "Buttons-list">
-            <li className = "Buttons-list-item">
-                <button className = "Set-display-mode Mode-selected">
-                    All
-                </button>
-            </li>
-            <li className = "buttons-list-item">
-                <button className = "Set-display-mode">
-                    To Do
-                </button>
-            </li>
-            <li className = "buttons-list-item">
-                <button className = "Set-display-mode">
-                    Done
-                </button>
-            </li>
-            <li className = "buttons-list-item">
-                <button className = "Set-display-mode">
-                    Trash
-                </button>
-            </li>
+    const filterActions = (status) => {
+        if (status === "All") {
+            return actionsList;
+        }
+        return actionsList.filter( (item) => item.status === status ) ;
+    }
 
+    return (    
+        <div class>    
 
-        </ul>        
+            <ul className = "Buttons-list">
+                <li className = "Buttons-list-item">
+                    <button className = "Set-display-mode Mode-selected" onClick = "handleTypeStatus('All')">
+                        All
+                    </button>
+                </li>
+                 <li className = "buttons-list-item">
+                    <button className = "Set-display-mode" onClick = "handleTypeStatus('ToDo')">
+                        To Do
+                    </button>
+                </li>
+                <li className = "buttons-list-item">
+                    <button className = "Set-display-mode" onClick = "handleTypeStatus('Done')">
+                        Done
+                     </button>
+                </li>
+                <li className = "buttons-list-item">
+                    <button className = "Set-display-mode" onClick = "handleTypeStatus('Trash')">
+                        Trash
+                    </button>
+                </li>
+            </ul>    
+        
+            <p class = "Display-status">statusValue</p>
+           
+            <hr color="green" size="2" style={{ marginBottom: '24px' }} />
+
+            {
+                filterActions(statusValue).map(
+                    (item) => {
+                        return <p>{item.name}</p>
+                    }
+                )
+            }
+
+        </div>
     );
 }
