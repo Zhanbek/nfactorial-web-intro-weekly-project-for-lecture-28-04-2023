@@ -34,22 +34,22 @@ export default function Main() {
 
             <ul className = "Buttons-list">
                 <li className = "Buttons-list-item">
-                    <button className = "Set-display-mode Mode-selected" onClick = "handleTypeStatus('All')">
+                    <button className = "Set-display-mode Mode-selected" onClick = {() => handleTypeStatus('All')}>
                         All
                     </button>
                 </li>
                  <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = "handleTypeStatus('ToDo')">
+                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('ToDo')}>
                         To Do
                     </button>
                 </li>
                 <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = "handleTypeStatus('Done')">
+                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Done')}>
                         Done
                      </button>
                 </li>
                 <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = "handleTypeStatus('Trash')">
+                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Trash')}>
                         Trash
                     </button>
                 </li>
@@ -57,7 +57,7 @@ export default function Main() {
         
             <p class = "Display-status">statusValue</p>
            
-            <hr color="green" size="2" style={{ marginBottom: '24px' }} />
+            <hr color="gray" size="2" style = {{ marginBottom: '24px' }} />
 
             {
                 filterActions(statusValue).map(
