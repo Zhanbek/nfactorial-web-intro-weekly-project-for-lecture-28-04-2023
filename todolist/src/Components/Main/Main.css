@@ -5,7 +5,7 @@
 
 .Buttons-list {
     display: grid;
-    grid-template-columns: repeat(4, 87px);   
+    grid-template-columns: repeat(4, 90px);   
     column-gap: 16px;
     list-style-type: none;
     margin: 0 0 64px 0;

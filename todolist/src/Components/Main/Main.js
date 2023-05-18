@@ -1,6 +1,6 @@
 import ActionRecord from "../ActionRecord/ActionRecord"
 import './Main.css'
-import './Main-outline-temp.css'
+// import './Main-outline-temp.css'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -30,6 +30,13 @@ export default function Main() {
         return actionsList.filter( (item) => item.status === status ) ;
     }
 
+    const setStatusActionRecord = (id, statusValue) => {
+        const itemToSet = actionsList.find( (item) => item.id === id );
+        itemToSet.status = statusValue;
+        const newActionsListWithoutCurrent = actionsList.find( (item) => item.id !== id );
+        setActionsList([...newActionsListWithoutCurrent], itemToSet);
+    }
+
     return (    
         <div class>    
 
@@ -41,7 +48,7 @@ export default function Main() {
                 </li>
                  <li className = "buttons-list-item">
                     <button className = "Set-display-mode" onClick = {() => handleTypeStatus('To Do')}>
-                        To Do
+                        ToDo
                     </button>
                 </li>
                 <li className = "buttons-list-item">
@@ -64,7 +71,8 @@ export default function Main() {
                 {
                     filterActions(statusValue).map(
                         (item) => {
-                            return <ActionRecord actionItem = {item}/>
+                            return <ActionRecord actionItem = {item}
+                                    setStatusActionRecord = {setStatusActionRecord}/>
                         }
                     )
                 }
