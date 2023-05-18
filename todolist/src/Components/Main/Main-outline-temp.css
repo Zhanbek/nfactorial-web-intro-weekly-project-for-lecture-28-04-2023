@@ -1,4 +1,6 @@
-
+.Action-buttons-container {
+    outline: 1px solid blue;   
+}
 
 .Buttons-list {
     outline: 3px solid black;        

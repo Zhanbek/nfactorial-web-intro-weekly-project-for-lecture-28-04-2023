@@ -1,6 +1,6 @@
 import ActionRecord from "../ActionRecord/ActionRecord"
 import './Main.css'
-// import './Main-outline-temp.css'
+import './Main-outline-temp.css'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -38,30 +38,33 @@ export default function Main() {
     }
 
     return (    
-        <div class>    
+        <div class = "Main">    
 
-            <ul className = "Buttons-list">
-                <li className = "Buttons-list-item">
-                    <button className = "Set-display-mode Mode-selected" onClick = {() => handleTypeStatus('All')}>
-                        All
-                    </button>
-                </li>
-                 <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('To Do')}>
-                        ToDo
-                    </button>
-                </li>
-                <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Done')}>
-                        Done
-                     </button>
-                </li>
-                <li className = "buttons-list-item">
-                    <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Trash')}>
-                        Trash
-                    </button>
-                </li>
-            </ul>    
+            <div class = "Action-buttons-container">
+                <ul className = "Buttons-list">
+                    <li className = "Buttons-list-item">
+                        <button className = "Set-display-mode Mode-selected" onClick = {() => handleTypeStatus('All')}>
+                            All
+                        </button>
+                    </li>
+                    <li className = "buttons-list-item">
+                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('To Do')}>
+                             ToDo
+                        </button>
+                    </li>
+                    <li className = "buttons-list-item">
+                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Done')}>
+                            Done
+                        </button>
+                    </li>
+                    <li className = "buttons-list-item">
+                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Trash')}>
+                            Trash
+                        </button>
+                    </li>
+                </ul>    
+
+            </div>
         
             <p class = "Display-status">{statusValue}</p>
            
