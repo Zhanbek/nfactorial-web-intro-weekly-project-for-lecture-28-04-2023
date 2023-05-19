@@ -67,7 +67,7 @@ export default function Main() {
                     </li>
                 </ul>   
 
-                <button class = "Button-add-action" onClick={ () => setIsAddModalVisible(true) }></button> 
+                <button class = "Button-add-action" onClick={ () => setIsAddModalVisible(!isAddModalVisible) }></button> 
 
             </div>
         
