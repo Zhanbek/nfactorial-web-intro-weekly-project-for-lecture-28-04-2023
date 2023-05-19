@@ -33,7 +33,7 @@ export default function Main() {
     const setStatusActionRecord = (id, statusValue) => {
         const itemToSet = actionsList.find( (item) => item.id === id );
         itemToSet.status = statusValue;
-        const newActionsListWithoutCurrent = actionsList.find( (item) => item.id !== id );
+        const newActionsListWithoutCurrent = actionsList.filter( (item) => item.id !== id );
         setActionsList([...newActionsListWithoutCurrent], itemToSet);
     }
 
@@ -62,10 +62,18 @@ export default function Main() {
                             Trash
                         </button>
                     </li>
-                </ul>    
+                </ul>   
+
+                <button class = "Button-add-action" onClick={ () => alert(1)}></button> 
 
             </div>
         
+            <div class = "Modal-window-add-action">
+                    <p>Add new action</p>
+                    <textarea></textarea>
+                    <button>Add</button>
+            </div>
+
             <p class = "Display-status">{statusValue}</p>
            
             <hr color="gray" size="2" style = {{ marginBottom: '24px' }} />

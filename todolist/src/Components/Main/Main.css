@@ -25,6 +25,13 @@
     align-items: center;
 }
 
+.Button-add-action {
+    width: 52px;
+    height: 52px;
+    
+    background-image: url("./CallModalAddAction.svg");
+}
+
 .Mode-selected {
     background: rgba(8, 30, 52, 0.42);
     color: #FFFFFF;  
@@ -64,4 +71,11 @@
     padding: 0;
     width: 654px;
     min-height: 184px;
+}
+
+.Modal-window-add-action {
+    width: 270px;
+    height: 230px;
+    background-color: #e4e6e7;
+    margin: 0 0 0 auto;
 }
