@@ -71,16 +71,6 @@ export default function Main() {
 
             </div>
         
-            {
-                isAddModalVisible && (
-                    <div class = "Modal-window-add-action">
-                        <p class = "Modal-window-add-action-ception">Add new action</p>
-                        <textarea class = "New-action-text"></textarea>
-                        <button class = "Add-new-action-to-list">Add</button>
-                    </div>
-                )
-            }
-
             <p class = "Display-status">{statusValue}</p>
            
             <hr color="gray" size="2" style = {{ marginBottom: '24px' }} />
@@ -95,6 +85,16 @@ export default function Main() {
                     )
                 }
             </ul>    
+
+            {
+                isAddModalVisible && (
+                    <div class = "Modal-window-add-action">
+                        <p class = "Modal-window-add-action-ception">Add new action</p>
+                        <textarea class = "New-action-text"></textarea>
+                        <button class = "Add-new-action-to-list">Add</button>
+                    </div>
+                )
+            }
 
         </div>
     );
