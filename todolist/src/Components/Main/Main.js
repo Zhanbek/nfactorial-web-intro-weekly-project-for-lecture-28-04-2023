@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 
 
 export default function Main() {
+
+    const [isAddModalVisible, setIsAddModalVisible] = useState(false);
+
     const INIT_ACTIONS_LIST = [
         {id : uuidv4(), name : "Go to the grocery store",       status : "Done"},
         {id : uuidv4(), name : "Сook food",                     status : "To Do"},
@@ -64,15 +67,19 @@ export default function Main() {
                     </li>
                 </ul>   
 
-                <button class = "Button-add-action" onClick={ () => alert(1)}></button> 
+                <button class = "Button-add-action" onClick={ () => setIsAddModalVisible(true) }></button> 
 
             </div>
         
-            <div class = "Modal-window-add-action">
-                    <p>Add new action</p>
-                    <textarea></textarea>
-                    <button>Add</button>
-            </div>
+            {
+                isAddModalVisible && (
+                    <div class = "Modal-window-add-action">
+                        <p class = "Modal-window-add-action-ception">Add new action</p>
+                        <textarea class = "New-action-text"></textarea>
+                        <button class = "Add-new-action-to-list">Add</button>
+                    </div>
+                )
+            }
 
             <p class = "Display-status">{statusValue}</p>
            
