@@ -22,7 +22,10 @@ export default function ActionRecord({actionItem, setStatusActionRecord}) {
             <input type = "checkbox" class = "Action-checkbox" checked = {actionItem.status === 'Done'} 
                   onChange = {changeStatusTo}></input>
                         
-            <span className = "Action-title">{actionItem.name}</span>
+            <span className = "Action-title"
+                  style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }>
+                    {actionItem.name}
+            </span>
         </li>
     );
 }

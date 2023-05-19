@@ -37,7 +37,8 @@ export default function Main() {
         const itemToSet = actionsList.find( (item) => item.id === id );
         itemToSet.status = statusValue;
         const newActionsListWithoutCurrent = actionsList.filter( (item) => item.id !== id );
-        setActionsList([...newActionsListWithoutCurrent], itemToSet);
+        console.log(1, newActionsListWithoutCurrent)
+        setActionsList([...newActionsListWithoutCurrent, itemToSet]);
     }
 
     return (    
