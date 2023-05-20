@@ -16,7 +16,7 @@ export default function ActionRecord( {actionItem, setStatusActionRecord, action
     return (
         <li className = "Actions-list-item">
             
-            <button className = "Call-modal-window" onClick = {handleClick}>               
+            <button className = "Call-modal-window" onClick = {handleClick(actionItem)}>               
             </button>
                         
             <input type = "checkbox" className = "Action-checkbox" checked = {actionItem.status === 'Done'} 

@@ -1,8 +1,8 @@
-import ActionRecord from "../ActionRecord/ActionRecord"
-import './Main.css'
-import './Main-outline-temp.css'
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import './Main.css'
+import './Main-outline-temp.css'
+import ActionRecord from "../ActionRecord/ActionRecord"
 
 
 export default function Main() {
@@ -25,6 +25,7 @@ export default function Main() {
     const [statusValue, setStatusValue] = useState('All');
 
     const [actionName, setActionName] = useState('');
+    const [itemToTrash, setItemToTrash] = useState(null);
     
     const handleTypeStatus = (type) => {
         setStatusValue(type)
@@ -60,16 +61,19 @@ export default function Main() {
         setActionName('');          
     }
 
-    const handleClickOnActionButton = () => {
-        console.log('handleClickOnActionButton');
+    const handleClickOnActionButton = (item) => {
+        console.log(item);        
         if (statusValue === "To Do") {
+            setItemToTrash(item);
             setIsModalVisibleForToDoList(!isModalVisibleForToDoList);
         }
     }
 
-    const moveToTrash = (e) => {
-        console.log(e.target);
-        
+    const moveToTrash = (item) => {
+        console.log(item);
+        item.status = "Trash";
+        const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
+        setActionsList([...newActionsListWithoutCurrent, item]);
     }
 
     return (    
@@ -137,8 +141,8 @@ export default function Main() {
                 isModalVisibleForToDoList && (
                     <div className = "Modal-window-for-todo-list">
                         <div className = "Move-to-trash-button-container">
-                            <button className = "Move-to-trash-button" onClick = {moveToTrash}>
-                                {/* <image src = {"./images/MoveToTrashIcon.svg"}></image> */}
+                            <button className = "Move-to-trash-button" onClick = { () => moveToTrash(itemToTrash) }>
+                                {/* <image src = {MOVE_TO_TRASH_ICON}></image> */}
                             </button>
                             <span className = "Move-to-trash-text">Move to Trash</span>
                         </div>

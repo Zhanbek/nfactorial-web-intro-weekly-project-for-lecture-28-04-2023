@@ -1,0 +1,1 @@
+export const MOVE_TO_TRASH_ICON = "./images/MoveToTrashIcon.svg";
