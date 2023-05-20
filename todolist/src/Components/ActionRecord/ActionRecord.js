@@ -1,15 +1,7 @@
 import './ActionRecord.css'
-import { useState } from 'react';
 // import './ActionRecord-outline-temp.css'
 
-export default function ActionRecord({actionItem, setStatusActionRecord, whenChangeActionText}) {
-
-    const [actionText, setActionText] = useState(""); 
-
-    const changeActionText = (e) => {        
-        setActionText(e.target.value);
-        console.log(actionText);
-    }
+export default function ActionRecord({actionItem, setStatusActionRecord, actionNameValue, onChangeActionName}) {
 
     const changeStatusTo = () => {
         if (actionItem.status !== "Trash") {
@@ -27,11 +19,13 @@ export default function ActionRecord({actionItem, setStatusActionRecord, whenCha
             <button className = "Call-modal-window">               
             </button>
                         
-            <input type = "checkbox" class = "Action-checkbox" checked = {actionItem.status === 'Done'} 
+            <input type = "checkbox" className = "Action-checkbox" checked = {actionItem.status === 'Done'} 
                   onChange = {changeStatusTo}></input>
                         
-            <span className = "Action-title" onChange = {changeActionText}
-                  style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }>
+            <span className = "Action-title" onChange = {onChangeActionName}
+                  style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }
+                  value = {actionNameValue}
+                  >
                     {actionItem.name}
             </span>
         </li>

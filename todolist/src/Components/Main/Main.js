@@ -21,6 +21,8 @@ export default function Main() {
     
     const [actionsList, setActionsList] = useState(INIT_ACTIONS_LIST);
     const [statusValue, setStatusValue] = useState('All');
+
+    const [actionName, setActionName] = useState('');
     
     const handleTypeStatus = (type) => {
         setStatusValue(type)
@@ -41,14 +43,15 @@ export default function Main() {
         setActionsList([...newActionsListWithoutCurrent, itemToSet]);
     }
 
-    const whenChangeActionText = (event) => {
-        console.log(event.target.value);
-    }
+    const onChangeActionName = (e) => {
+        console.log(e.target.value);
+        setActionName(e.target.value);
+    };
 
     return (    
-        <div class = "Main">    
+        <div className = "Main">    
 
-            <div class = "Action-buttons-container">
+            <div className = "Action-buttons-container">
                 <ul className = "Buttons-list">
                     <li className = "Buttons-list-item">
                         <button className = "Set-display-mode Mode-selected" onClick = {() => handleTypeStatus('All')}>
@@ -72,21 +75,24 @@ export default function Main() {
                     </li>
                 </ul>   
 
-                <button class = "Button-add-action" onClick={ () => setIsAddModalVisible(!isAddModalVisible) }></button> 
+                <button className = "Button-add-action" onClick={ () => setIsAddModalVisible(!isAddModalVisible) }></button> 
 
             </div>
         
-            <p class = "Display-status">{statusValue}</p>
+            <p className = "Display-status">{statusValue}</p>
            
             <hr color="gray" size="2" style = {{ marginBottom: '24px' }} />
 
-            <ul class = "Actions-list">
+            <ul className = "Actions-list">
                 {
                     filterActions(statusValue).map(
                         (item) => {
-                            return <ActionRecord actionItem = {item}
+                            return <ActionRecord key = {item.id}
+                                    actionItem = {item}
                                     setStatusActionRecord = {setStatusActionRecord}
-                                    whenChangeActionText = {whenChangeActionText}/>
+                                    actionNameValue = {actionName}
+                                    onChangeActionName = {this.onChangeActionName}
+                                    />
                         }
                     )
                 }
@@ -94,10 +100,10 @@ export default function Main() {
 
             {
                 isAddModalVisible && (
-                    <div class = "Modal-window-add-action">
-                        <p class = "Modal-window-add-action-ception">Add new action</p>
-                        <textarea class = "New-action-text"></textarea>
-                        <button class = "Add-new-action-to-list">Add</button>
+                    <div className = "Modal-window-add-action">
+                        <p className = "Modal-window-add-action-ception">Add new action</p>
+                        <textarea className = "New-action-text"></textarea>
+                        <button className = "Add-new-action-to-list">Add</button>
                     </div>
                 )
             }
