@@ -11,6 +11,8 @@ export default function Main() {
 
     const [isModalVisibleForToDoList, setIsModalVisibleForToDoList] = useState(false);
 
+    const [isModalVisibleForTrashList, setIsModalVisibleForTrashList] = useState(false);
+
     const INIT_ACTIONS_LIST = [
         {id : uuidv4(), name : "Go to the grocery store",       status : "Done"},
         {id : uuidv4(), name : "Сook food",                     status : "To Do"},
@@ -26,6 +28,7 @@ export default function Main() {
 
     const [actionName, setActionName] = useState('');
     const [itemToTrash, setItemToTrash] = useState(null);
+    const [itemToToDo, setItemToToDo] = useState(null);
     
     const handleTypeStatus = (type) => {
         setStatusValue(type)
@@ -69,12 +72,28 @@ export default function Main() {
         }
     }
 
-    const moveToTrash = (item) => {
+    // const moveToTrash = (item) => {
+    //     console.log(item);
+    //     item.status = "Trash";
+    //     const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
+    //     setActionsList([...newActionsListWithoutCurrent, item]);
+    //     setIsModalVisibleForToDoList(false);
+    // }
+
+    //const moveToToDo
+    
+    const moveToStatus = (item, newStatusValue) => {
         console.log(item);
-        item.status = "Trash";
+        const oldStatusValue = item.status;
+        item.status = newStatusValue;
         const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
         setActionsList([...newActionsListWithoutCurrent, item]);
-        setIsModalVisibleForToDoList(false);
+        if (oldStatusValue === "To Do") {
+            setIsModalVisibleForToDoList(false);
+        }
+        else if  (oldStatus === "Trash") {
+            setIsModalVisibleForTrashList(false);
+        }           
     }
 
     return (    
@@ -146,6 +165,19 @@ export default function Main() {
                                 {/* <image src = {MOVE_TO_TRASH_ICON}></image> */}
                             </button>
                             <span className = "Move-to-trash-text">Move to Trash</span>
+                        </div>
+
+                    </div>
+                )
+            }
+
+            {
+                isModalVisibleForTrashList && (
+                    <div className = "Modal-window-for-trash-list">
+                        <div className = "Move-to-todo-button-container">
+                            <button className = "Move-to-todo-button" onClick = { () => moveToToDo(itemToToDo) }>
+                            </button>
+                            <span className = "Move-to-todo-text"></span>
                         </div>
 
                     </div>
