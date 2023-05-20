@@ -79,8 +79,6 @@ export default function Main() {
     //     setActionsList([...newActionsListWithoutCurrent, item]);
     //     setIsModalVisibleForToDoList(false);
     // }
-
-    //const moveToToDo
     
     const moveToStatus = (item, newStatusValue) => {
         console.log(item);
