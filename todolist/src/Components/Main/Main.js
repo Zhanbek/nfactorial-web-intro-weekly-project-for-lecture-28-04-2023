@@ -9,6 +9,8 @@ export default function Main() {
 
     const [isAddModalVisible, setIsAddModalVisible] = useState(false);
 
+    const [isModalVisibleForToDoList, setIsModalVisibleForToDoList] = useState(false);
+
     const INIT_ACTIONS_LIST = [
         {id : uuidv4(), name : "Go to the grocery store",       status : "Done"},
         {id : uuidv4(), name : "Сook food",                     status : "To Do"},
@@ -58,6 +60,18 @@ export default function Main() {
         setActionName('');          
     }
 
+    const handleClickOnActionButton = () => {
+        console.log('handleClickOnActionButton');
+        if (statusValue === "To Do") {
+            setIsModalVisibleForToDoList(!isModalVisibleForToDoList);
+        }
+    }
+
+    const moveToTrash = (e) => {
+        console.log(e.target);
+        
+    }
+
     return (    
         <div className = "Main">    
 
@@ -101,7 +115,8 @@ export default function Main() {
                                         key = {item.id}                                                                   
                                         actionItem = {item}
                                         setStatusActionRecord = {setStatusActionRecord}
-                                        actionNameValue = {actionName}                                       
+                                        actionNameValue = {actionName}  
+                                        handleClick = {handleClickOnActionButton}                                     
                                     />
                         }
                     )
@@ -114,6 +129,15 @@ export default function Main() {
                         <p className = "Modal-window-add-action-ception">Add new action</p>
                         <textarea className = "New-action-text" onChange = {onChangeActionName} value = {actionName}></textarea>
                         <button className = "Add-new-action-to-list" onClick = {addAction}>Add</button>
+                    </div>
+                )
+            }
+            
+            {
+                isModalVisibleForToDoList && (
+                    <div className = "Modal-window-for-todo-list">
+                        <button className = "Move-to-trash-button" onClick = {moveToTrash}></button>
+                        <span className = "Move-to-trash-text">Move to Trash</span>
                     </div>
                 )
             }

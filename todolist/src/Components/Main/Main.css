@@ -104,3 +104,32 @@
     color: white;
     border-radius: 20px;
 }
+
+.Modal-window-for-todo-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px 12px 4px;
+    width: 240px;
+    height: 48px;    
+    background: #E4E6E7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;    
+}
+
+.Move-to-trash-button {
+    width: 24px;
+    height: 24px;
+    background-image: url("./images/MoveToTrashIcon.svg");
+}
+
+.Move-to-trash-text {
+    display: block;
+    width: 200px;
+    height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;
+}
