@@ -136,8 +136,11 @@ export default function Main() {
             {
                 isModalVisibleForToDoList && (
                     <div className = "Modal-window-for-todo-list">
-                        <button className = "Move-to-trash-button" onClick = {moveToTrash}></button>
-                        <span className = "Move-to-trash-text">Move to Trash</span>
+                        <div className = "Move-to-trash-button-container">
+                            <button className = "Move-to-trash-button" onClick = {moveToTrash}></button>
+                            <span className = "Move-to-trash-text">Move to Trash</span>
+                        </div>
+
                     </div>
                 )
             }

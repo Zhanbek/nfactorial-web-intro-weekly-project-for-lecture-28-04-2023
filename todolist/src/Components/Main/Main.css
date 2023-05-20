@@ -106,8 +106,6 @@
 }
 
 .Modal-window-for-todo-list {
-    display: flex;
-    justify-content: space-between;
     padding: 12px 0px 12px 4px;
     width: 240px;
     height: 48px;    
@@ -116,10 +114,22 @@
     border-radius: 12px;    
 }
 
+.Move-to-trash-button-container {
+    display: grid;
+    grid-template-columns: 24px  200px;    
+    column-gap: 12px;
+    margin: 0;
+    padding: 0;    
+    width: 236px;
+    height: 24px;
+}
+
 .Move-to-trash-button {
     width: 24px;
     height: 24px;
     background-image: url("./images/MoveToTrashIcon.svg");
+    background-color: #353535;
+    padding: auto;
 }
 
 .Move-to-trash-text {
