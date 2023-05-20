@@ -1,7 +1,7 @@
 import './ActionRecord.css'
 // import './ActionRecord-outline-temp.css'
 
-export default function ActionRecord({actionItem, setStatusActionRecord, actionNameValue, onChangeActionName}) {
+export default function ActionRecord( {actionItem, setStatusActionRecord, actionNameValue, onChangeActionName} ) {
 
     const changeStatusTo = () => {
         if (actionItem.status !== "Trash") {
@@ -14,7 +14,7 @@ export default function ActionRecord({actionItem, setStatusActionRecord, actionN
     };
     
     return (
-        <li className = "Actions-list-item">
+        <li key = {actionItem.id} className = "Actions-list-item">
             
             <button className = "Call-modal-window">               
             </button>

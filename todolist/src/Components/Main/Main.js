@@ -46,7 +46,7 @@ export default function Main() {
     const onChangeActionName = (e) => {
         console.log(e.target.value);
         setActionName(e.target.value);
-    };
+    }
 
     return (    
         <div className = "Main">    
@@ -87,11 +87,11 @@ export default function Main() {
                 {
                     filterActions(statusValue).map(
                         (item) => {
-                            return <ActionRecord key = {item.id}
-                                    actionItem = {item}
-                                    setStatusActionRecord = {setStatusActionRecord}
-                                    actionNameValue = {actionName}
-                                    onChangeActionName = {this.onChangeActionName}
+                            return <ActionRecord                                 
+                                        actionItem = {item}
+                                        setStatusActionRecord = {setStatusActionRecord}
+                                        actionNameValue = {actionName}
+                                        onChangeActionName = {this.onChangeActionName}
                                     />
                         }
                     )
