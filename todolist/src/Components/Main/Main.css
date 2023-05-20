@@ -113,6 +113,10 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
     border-radius: 12px;    
     box-sizing: border-box;
+
+    position: absolute;
+    top: 530px;
+    right: 400px; 
 }
 
 .Move-to-trash-button-container {
@@ -149,6 +153,9 @@
     background: #E4E6E7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
     border-radius: 12px;    
+    position: absolute;
+    top: 530px;
+    right: 400px; 
 }
 
 .Delete-forever-button-container {
@@ -179,6 +186,8 @@
 }
 
 .Move-to-todo-button-container {
+    display: grid;
+    grid-template-columns: 24px 250px;
     width: 240px;
     height: 24px;
     left: 0px;
@@ -189,4 +198,15 @@
     display: block;
     width: 24px;
     height: 24px;     
+}
+
+.Move-to-todo-text {
+    width: 250px;
+    height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;    
 }

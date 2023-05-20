@@ -188,7 +188,7 @@ export default function Main() {
                         <div className = "Delete-forever-button-container">
                             <button className = "Delete-forever-button" onClick = { () => deleteForever(itemToMoveFromTrash) }>
                             </button>
-                            <span className = "Delete-forever-text">Move Back To To Do</span>
+                            <span className = "Delete-forever-text">Delete Forever</span>
                         </div>
 
                         <div className = "Move-to-todo-button-container">
