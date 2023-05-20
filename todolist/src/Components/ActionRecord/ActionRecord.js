@@ -1,7 +1,7 @@
 import './ActionRecord.css'
 // import './ActionRecord-outline-temp.css'
 
-export default function ActionRecord( {actionItem, setStatusActionRecord, actionNameValue, onChangeActionName} ) {
+export default function ActionRecord( {actionItem, setStatusActionRecord, actionNameValue} ) {
 
     const changeStatusTo = () => {
         if (actionItem.status !== "Trash") {
@@ -14,7 +14,7 @@ export default function ActionRecord( {actionItem, setStatusActionRecord, action
     };
     
     return (
-        <li key = {actionItem.id} className = "Actions-list-item">
+        <li className = "Actions-list-item">
             
             <button className = "Call-modal-window">               
             </button>
@@ -22,7 +22,7 @@ export default function ActionRecord( {actionItem, setStatusActionRecord, action
             <input type = "checkbox" className = "Action-checkbox" checked = {actionItem.status === 'Done'} 
                   onChange = {changeStatusTo}></input>
                         
-            <span className = "Action-title" onChange = {onChangeActionName}
+            <span className = "Action-title"
                   style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }
                   value = {actionNameValue}
                   >

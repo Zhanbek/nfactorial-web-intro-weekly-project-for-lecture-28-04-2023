@@ -48,6 +48,16 @@ export default function Main() {
         setActionName(e.target.value);
     }
 
+    const addAction = () => {
+        const newAction = {
+                            id : uuidv4(), 
+                            name : actionName,       
+                            status : "To Do"
+                        };
+        setActionsList([...actionsList, newAction]);  
+        setActionName('');          
+    }
+
     return (    
         <div className = "Main">    
 
@@ -87,11 +97,11 @@ export default function Main() {
                 {
                     filterActions(statusValue).map(
                         (item) => {
-                            return <ActionRecord                                 
+                            return <ActionRecord    
+                                        key = {item.id}                                                                   
                                         actionItem = {item}
                                         setStatusActionRecord = {setStatusActionRecord}
-                                        actionNameValue = {actionName}
-                                        onChangeActionName = {this.onChangeActionName}
+                                        actionNameValue = {actionName}                                       
                                     />
                         }
                     )
@@ -102,8 +112,8 @@ export default function Main() {
                 isAddModalVisible && (
                     <div className = "Modal-window-add-action">
                         <p className = "Modal-window-add-action-ception">Add new action</p>
-                        <textarea className = "New-action-text"></textarea>
-                        <button className = "Add-new-action-to-list">Add</button>
+                        <textarea className = "New-action-text" onChange = {onChangeActionName} value = {actionName}></textarea>
+                        <button className = "Add-new-action-to-list" onClick = {addAction}>Add</button>
                     </div>
                 )
             }
