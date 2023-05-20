@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import './Main.css'
-import './Main-outline-temp.css'
+// import './Main-outline-temp.css'
 import ActionRecord from "../ActionRecord/ActionRecord"
 
 
@@ -27,8 +27,10 @@ export default function Main() {
     const [statusValue, setStatusValue] = useState('All');
 
     const [actionName, setActionName] = useState('');
+
     const [itemToTrash, setItemToTrash] = useState(null);
-    const [itemToToDo, setItemToToDo] = useState(null);
+    const [itemToMoveFromTrash, setItemToMoveFromTrash] = useState(null);
+   
     
     const handleTypeStatus = (type) => {
         setStatusValue(type)
@@ -69,7 +71,10 @@ export default function Main() {
         if (statusValue === "To Do") {
             setItemToTrash(item);
             setIsModalVisibleForToDoList(true);
-        }
+        } else if (statusValue === "Trash") {
+            setItemToMoveFromTrash(item);
+            setIsModalVisibleForTrashList(true);
+        } 
     }
 
     // const moveToTrash = (item) => {
@@ -89,9 +94,15 @@ export default function Main() {
         if (oldStatusValue === "To Do") {
             setIsModalVisibleForToDoList(false);
         }
-        else if  (oldStatus === "Trash") {
+        else if  (oldStatusValue === "Trash") {
             setIsModalVisibleForTrashList(false);
         }           
+    }
+
+    const deleteForever = (item)=> {
+        console.log(item, 'to delete forever');
+        const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
+        setActionsList([...newActionsListWithoutCurrent]);
     }
 
     return (    
@@ -138,7 +149,8 @@ export default function Main() {
                                         actionItem = {item}
                                         setStatusActionRecord = {setStatusActionRecord}
                                         actionNameValue = {actionName}  
-                                        handleClick = {handleClickOnActionButton}                                     
+                                        handleClick = {handleClickOnActionButton}  
+                                        statusOfActionsInList = {statusValue}                                   
                                     />
                         }
                     )
@@ -159,7 +171,7 @@ export default function Main() {
                 isModalVisibleForToDoList && (
                     <div className = "Modal-window-for-todo-list">
                         <div className = "Move-to-trash-button-container">
-                            <button className = "Move-to-trash-button" onClick = { () => moveToTrash(itemToTrash) }>
+                            <button className = "Move-to-trash-button" onClick = { () => moveToStatus(itemToTrash,  "Trash") }>
                                 {/* <image src = {MOVE_TO_TRASH_ICON}></image> */}
                             </button>
                             <span className = "Move-to-trash-text">Move to Trash</span>
@@ -172,10 +184,17 @@ export default function Main() {
             {
                 isModalVisibleForTrashList && (
                     <div className = "Modal-window-for-trash-list">
-                        <div className = "Move-to-todo-button-container">
-                            <button className = "Move-to-todo-button" onClick = { () => moveToToDo(itemToToDo) }>
+                        
+                        <div className = "Delete-forever-button-container">
+                            <button className = "Delete-forever-button" onClick = { () => deleteForever(itemToMoveFromTrash) }>
                             </button>
-                            <span className = "Move-to-todo-text"></span>
+                            <span className = "Delete-forever-text">Move Back To To Do</span>
+                        </div>
+
+                        <div className = "Move-to-todo-button-container">
+                            <button className = "Move-to-todo-button" onClick = { () => moveToStatus(itemToMoveFromTrash, "To Do") }>
+                            </button>
+                            <span className = "Move-to-todo-text">Move Back To To Do</span>
                         </div>
 
                     </div>

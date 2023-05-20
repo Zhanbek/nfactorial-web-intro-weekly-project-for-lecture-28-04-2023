@@ -142,3 +142,51 @@
     line-height: 18px;
     color: #353535;
 }
+
+.Modal-window-for-trash-list {
+    width: 240px;
+    height: 82px;    
+    background: #E4E6E7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;    
+}
+
+.Delete-forever-button-container {
+    display: grid;
+    grid-template-columns: 24px 200px;
+    column-gap: 12px;
+    margin: 0;
+    padding: 0px;
+    width: 236px;
+    height: 24px;    
+}
+
+.Delete-forever-button {
+    display: block;
+    width: 24px;
+    height: 24px;    
+}
+
+.Delete-forever-text {
+    width: 200px;
+    height: 24px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #353535;    
+}
+
+.Move-to-todo-button-container {
+    width: 240px;
+    height: 24px;
+    left: 0px;
+    top: 46px
+}
+
+.Move-to-todo-button {
+    display: block;
+    width: 24px;
+    height: 24px;     
+}

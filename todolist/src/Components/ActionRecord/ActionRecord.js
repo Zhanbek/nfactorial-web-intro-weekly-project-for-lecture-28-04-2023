@@ -1,7 +1,7 @@
 import './ActionRecord.css'
 // import './ActionRecord-outline-temp.css'
 
-export default function ActionRecord( {actionItem, setStatusActionRecord, actionNameValue, handleClick} ) {
+export default function ActionRecord( {actionItem, setStatusActionRecord, actionNameValue, handleClick, statusOfActionsInList} ) {
 
     const changeStatusTo = () => {
         if (actionItem.status !== "Trash") {
@@ -26,7 +26,8 @@ export default function ActionRecord( {actionItem, setStatusActionRecord, action
                   style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }
                   value = {actionNameValue}
                   >
-                    {actionItem.name}
+                    {actionItem.name} - <strong>{ statusOfActionsInList === "All" && actionItem.status === "Trash" ? 
+                                                        ("Status of action : Trash") : ""}</strong>  
             </span>
         </li>
     );
