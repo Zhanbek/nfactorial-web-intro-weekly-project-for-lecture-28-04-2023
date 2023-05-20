@@ -163,7 +163,7 @@
     grid-template-columns: 24px 200px;
     column-gap: 12px;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     width: 236px;
     height: 24px;    
 }
@@ -187,11 +187,12 @@
 
 .Move-to-todo-button-container {
     display: grid;
-    grid-template-columns: 24px 250px;
+    grid-template-columns: 24px 200px;
+    column-gap: 12px;
+    margin: 0;
+    padding: 0;
     width: 240px;
     height: 24px;
-    left: 0px;
-    top: 46px
 }
 
 .Move-to-todo-button {
@@ -201,7 +202,7 @@
 }
 
 .Move-to-todo-text {
-    width: 250px;
+    width: 200px;
     height: 24px;
     font-family: 'Inter';
     font-style: normal;

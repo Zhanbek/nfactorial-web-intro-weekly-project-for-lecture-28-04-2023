@@ -74,7 +74,9 @@ export default function Main() {
         } else if (statusValue === "Trash") {
             setItemToMoveFromTrash(item);
             setIsModalVisibleForTrashList(true);
-        } 
+        } else {
+            alert("This button is accessed only for To Do and Trash Lists")
+        }
     }
 
     // const moveToTrash = (item) => {
