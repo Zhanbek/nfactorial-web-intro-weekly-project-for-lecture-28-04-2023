@@ -103,6 +103,7 @@ export default function Main() {
         console.log(item, 'to delete forever');
         const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
         setActionsList([...newActionsListWithoutCurrent]);
+        setIsModalVisibleForTrashList(false);
     }
 
     return (    
