@@ -65,7 +65,7 @@ export default function Main() {
         console.log(item);        
         if (statusValue === "To Do") {
             setItemToTrash(item);
-            setIsModalVisibleForToDoList(!isModalVisibleForToDoList);
+            setIsModalVisibleForToDoList(true);
         }
     }
 
@@ -74,6 +74,7 @@ export default function Main() {
         item.status = "Trash";
         const newActionsListWithoutCurrent = actionsList.filter( (i) => i.id !== item.id );
         setActionsList([...newActionsListWithoutCurrent, item]);
+        setIsModalVisibleForToDoList(false);
     }
 
     return (    
