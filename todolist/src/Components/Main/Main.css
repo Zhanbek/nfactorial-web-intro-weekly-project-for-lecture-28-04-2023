@@ -28,8 +28,7 @@
 .Button-add-action {
     width: 52px;
     height: 52px;
-    
-    background-image: url("./CallModalAddAction.svg");
+    background-image: url("./images/CallModalAddAction.svg");
 }
 
 .Mode-selected {

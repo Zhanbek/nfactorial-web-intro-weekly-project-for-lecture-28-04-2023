@@ -41,6 +41,10 @@ export default function Main() {
         setActionsList([...newActionsListWithoutCurrent, itemToSet]);
     }
 
+    const whenChangeActionText = (event) => {
+        console.log(event.target.value);
+    }
+
     return (    
         <div class = "Main">    
 
@@ -81,7 +85,8 @@ export default function Main() {
                     filterActions(statusValue).map(
                         (item) => {
                             return <ActionRecord actionItem = {item}
-                                    setStatusActionRecord = {setStatusActionRecord}/>
+                                    setStatusActionRecord = {setStatusActionRecord}
+                                    whenChangeActionText = {whenChangeActionText}/>
                         }
                     )
                 }
