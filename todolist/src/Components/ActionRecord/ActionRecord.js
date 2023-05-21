@@ -26,8 +26,8 @@ export default function ActionRecord( {actionItem, setStatusActionRecord, action
                   style = {{textDecoration : (actionItem.status === 'Done') ? 'line-through' : 'none' } }
                   value = {actionNameValue}
                   >
-                    {actionItem.name} - <strong>{ statusOfActionsInList === "All" && actionItem.status === "Trash" ? 
-                                                        ("Status of action : Trash") : ""}</strong>  
+                    {actionItem.name} <strong>{ statusOfActionsInList === "All" && actionItem.status === "Trash" ? 
+                                                        (" - Status of action : Trash") : ""}</strong>  
             </span>
         </li>
     );
