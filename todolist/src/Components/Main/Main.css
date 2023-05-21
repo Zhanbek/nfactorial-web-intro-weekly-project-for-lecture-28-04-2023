@@ -50,6 +50,9 @@
 } 
 
 .Set-display-mode {
+    display: block;
+    margin: 0;   
+    padding: 10px 24px;
     width: 87px;
     height: 40px;
     background: linear-gradient(0deg, rgba(8, 30, 52, 0.05), rgba(8, 30, 52, 0.05)), #F0F0F0;
@@ -58,11 +61,26 @@
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
+    line-height: 18px;  
+    text-align: center;
+    color: #081E34;      
+}
+
+.Mode-selected {
+    display: block;
+    margin: 0;
+    padding: 8px 24px;
+    width: 87px;
+    height: 40px;
+    background: rgba(8, 30, 52, 0.42);
+    border-radius: 100px;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
     line-height: 18px;
-    color: #081E34;    
     text-align: center;    
-    margin: 0;   
-    padding: 10px 24px;
+    color: #FFFFFF;
 }
 
 .Actions-list {

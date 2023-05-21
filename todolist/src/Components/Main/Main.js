@@ -114,22 +114,26 @@ export default function Main() {
             <div className = "Action-buttons-container">
                 <ul className = "Buttons-list">
                     <li className = "Buttons-list-item">
-                        <button className = "Set-display-mode Mode-selected" onClick = {() => handleTypeStatus('All')}>
+                        <button className = {`Set-display-mode ${statusValue === 'All' ? 'Mode-selected' : ''}`} 
+                                onClick = {() => handleTypeStatus('All')}>
                             All
                         </button>
                     </li>
                     <li className = "buttons-list-item">
-                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('To Do')}>
+                        <button className = {`Set-display-mode ${statusValue === 'To Do' ? 'Mode-selected' : ''}`} 
+                                onClick = {() => handleTypeStatus('To Do')}>
                              ToDo
                         </button>
                     </li>
                     <li className = "buttons-list-item">
-                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Done')}>
+                        <button className = {`Set-display-mode ${statusValue === 'Done' ? 'Mode-selected' : ''}`} 
+                                onClick = {() => handleTypeStatus('Done')}>
                             Done
                         </button>
                     </li>
                     <li className = "buttons-list-item">
-                        <button className = "Set-display-mode" onClick = {() => handleTypeStatus('Trash')}>
+                        <button className = {`Set-display-mode ${statusValue === 'Trash' ? 'Mode-selected' : ''}`} 
+                                onClick = {() => handleTypeStatus('Trash')}>
                             Trash
                         </button>
                     </li>
