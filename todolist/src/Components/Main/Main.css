@@ -148,9 +148,10 @@
 }
 
 .Move-to-trash-button {
-    display: block;
-    width: 24px;
-    height: 24px;        
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    background-image: url("./images/MoveToTrashIcon.svg");  
 }
 
 .Move-to-trash-text {
@@ -190,6 +191,7 @@
     display: block;
     width: 24px;
     height: 24px;    
+    background-image: url("./images/DeleteForever.svg");
 }
 
 .Delete-forever-text {
@@ -217,6 +219,7 @@
     display: block;
     width: 24px;
     height: 24px;     
+    background-image: url("./images/MoveToToDo.svg");
 }
 
 .Move-to-todo-text {

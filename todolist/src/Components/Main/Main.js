@@ -179,7 +179,6 @@ export default function Main() {
                     <div className = "Modal-window-for-todo-list">
                         <div className = "Move-to-trash-button-container">
                             <button className = "Move-to-trash-button" onClick = { () => moveToStatus(itemToTrash,  "Trash") }>
-                                {/* <image src = {MOVE_TO_TRASH_ICON}></image> */}
                             </button>
                             <span className = "Move-to-trash-text">Move to Trash</span>
                         </div>
@@ -203,7 +202,6 @@ export default function Main() {
                             </button>
                             <span className = "Move-to-todo-text">Move Back To To Do</span>
                         </div>
-
                     </div>
                 )
             }
